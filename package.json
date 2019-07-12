@@ -12,6 +12,7 @@
     "init": "^0.1.2",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
+    "superagent": "^5.1.0",
     "supertest": "^4.0.2"
   },
   "devDependencies": {},
