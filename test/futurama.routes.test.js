@@ -10,6 +10,7 @@ describe('profile and api routes', () => {
       expect(res.body).toEqual({
         name: 'vasily',
         character: 'bender',
+        quote: expect.any(Object)
       });
     });
   });
@@ -20,7 +21,8 @@ describe('profile and api routes', () => {
       .then(res => {
         expect(res.body).toEqual([{
           name: 'vasily',
-          character: 'bender'
+          character: 'bender',
+          quote:expect.any(Object)
         }]);
       });
   });
@@ -31,7 +33,8 @@ describe('profile and api routes', () => {
       .then(res => {
         expect(res.body).toEqual({
           name: 'vasily',
-          character: 'bender'
+          character: 'bender',
+          quote: expect.any(Object)
         })
       });
   });
