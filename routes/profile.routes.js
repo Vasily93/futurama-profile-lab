@@ -1,18 +1,21 @@
 const { Router } = require('express');
+const futuramaRoutes = require('../routes/futurama.routes');
+const futuramaQuote = require('../lib/middleweare/quote.middleware');
 
 const profiles = [];
 
 module.exports = Router()
-  .post('/profile', (req, res) => {
+  .post('/profile', futuramaQuote, (req, res) => {
     const {
       name,
-      character
+      character,
     } = req.body;
-
-    profiles.push({ name, character });
+    
+    profiles.push({ name, character, quote:req.quote });
     res.send({
       name,
-      character
+      character,
+      quote:req.quote
     });
   })
 
@@ -42,4 +45,4 @@ module.exports = Router()
   .delete('/profile/:id', (req, res) => {
     const deleted = profiles. splice(req.params.id, 1);
     res.send(deleted[0]);
-  })
+  });
