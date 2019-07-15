@@ -9,8 +9,19 @@ describe('profile and api routes', () => {
     .then(res => {
       expect(res.body).toEqual({
         name: 'vasily',
-        character: 'bender'
+        character: 'bender',
       });
     });
+  });
+
+  it('can GET a list of profiles', () => {
+    return request(app)
+      .get('/profile')
+      .then(res => {
+        expect(res.body).toEqual([{
+          name: 'vasily',
+          character: 'bender'
+        }]);
+      });
   });
 });
