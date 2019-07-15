@@ -24,3 +24,11 @@ module.exports = Router()
     res.send(profiles[req.params.id]);
   })
 
+  // .patch('/profile/:id', (req, res) => {
+  //   res.send()
+  // })
+
+  .delete('/profile/:id', (req, res) => {
+    const deleted = profiles. splice(req.params.id, 1);
+    res.send(deleted[0]);
+  })

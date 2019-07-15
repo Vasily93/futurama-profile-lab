@@ -35,4 +35,20 @@ describe('profile and api routes', () => {
         })
       });
   });
+
+  // it('can PATCTH a profile', () => {
+  //   return request(app)
+  //   .patch('profile/0')
+  //   .then(res => {
+
+  //   })
+  // })
+
+  it('can delete a profile by id', () => {
+    return request(app)
+    .delete('/profile/0')
+    .then(res => {
+      expect(res.body).toEqual({ name: 'vasily', character: 'bender'});
+    })
+  })
 });
