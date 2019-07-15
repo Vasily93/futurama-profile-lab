@@ -24,9 +24,20 @@ module.exports = Router()
     res.send(profiles[req.params.id]);
   })
 
-  // .patch('/profile/:id', (req, res) => {
-  //   res.send()
-  // })
+  .patch('/profile/:id', (req, res) => {
+    const {
+      name,
+      character
+    } = req.body;
+
+    const newProfile = {
+      name,
+      character
+    };
+
+    profiles[req.params.id] = newProfile;
+    res.send(newProfile);
+  })
 
   .delete('/profile/:id', (req, res) => {
     const deleted = profiles. splice(req.params.id, 1);
