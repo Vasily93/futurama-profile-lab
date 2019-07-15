@@ -20,3 +20,7 @@ module.exports = Router()
     res.send(profiles);
   })
 
+  .get('/profile/:id', (req, res) => {
+    res.send(profiles[req.params.id]);
+  })
+

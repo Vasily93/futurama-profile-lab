@@ -24,4 +24,15 @@ describe('profile and api routes', () => {
         }]);
       });
   });
+
+  it('can GET profile by id', () => {
+    return request(app)
+      .get('/profile/0')
+      .then(res => {
+        expect(res.body).toEqual({
+          name: 'vasily',
+          character: 'bender'
+        })
+      });
+  });
 });
